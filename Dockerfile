@@ -2,7 +2,7 @@ FROM alpine:latest
 ENV MIGRATIONS_URL=file://migrations
 
 ONBUILD WORKDIR /
-ONBUILD COPY --from=0 /repo/build build
+ONBUILD COPY --from=0 /repo/build app
 ONBUILD COPY service/database/migrations migrations
 
-CMD ["build/service"]
+CMD ["app/service"]
