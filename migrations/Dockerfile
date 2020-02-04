@@ -1,6 +1,8 @@
 FROM alpine:latest
 RUN apk update && \
-    apk --no-cache add ca-certificates
+    apk --no-cache add \
+	ca-certificates \
+	tzdata
 
 ENV MIGRATIONS_URL=file://migrations
 
